@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cadastro de clientes</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="text.js"></script>
+
+    <style>
+        #fPessoas {
+            width: 480px;
+            margin-left: 30%;
+            margin-top: 3%;
+        }
+
+        tr:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Formulario de cadastro de clientes...</p> <br>
+
+    <div id="fPessoas">
+        <form>
+            <div class="form-group">
+                <label for="txtCodigo">Código</label>
+                <input type="text" class="form-control" id="txtCodigo" aria-describedby="emailHelp" placeholder="Código" readonly>
+            </div>
+            <div class="form-group">
+                <label for="txtNome">Nome completo</label>
+                <input type="text" class="form-control" id="txtNome" aria-describedby="emailHelp" placeholder="Nome ">
+            </div>
+            
+            <label for="validationCustomUsername">E-mail</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                </div>
+                <input type="text" class="form-control" id="txtEmail" placeholder="E-mail"
+                       aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Por favor, informe um e-mail válido.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtSobrenome">CPF/CNPJ</label>
+                <input type="text" class="form-control" id="txtSobrenome" placeholder="CPF/CNPJ">
+            </div>
+            <div class="form-group">
+                <label for="txtTelefone">Telefone</label>
+                <input type="text" class="form-control" id="txtTefone" placeholder="Telefone">
+            </div>
+
+            <div class="form-group">
+                <label for="txtCep">Cep</label>
+                <input type="text" class="form-control" id="txtCep" placeholder="Cep">
+            </div>
+            
+            <div class="form-group">
+                <label for="txtLogradouro">Logradouro</label>
+                <input type="text" class="form-control" id="txtLogradouro" placeholder="Logradouro">
+            </div>
+            
+            <div class="form-group">
+                <label for="txtNumero">Número</label>
+                <input type="text" class="form-control" id="txtNumero" placeholder="Numero">
+            </div>
+
+            <div class="form-group">
+                <label for="txtBairro">Bairro</label>
+                <input type="text" class="form-control" id="txtBairro" placeholder="Bairro">
+            </div>
+
+            <div class="form-group">
+                <label for="slEstado">Estado</label>
+                <select id="slEstado" class="form-control">
+                    AZ10
+                    <option value="SP" selected>SP</option>
+                    <option value="RS">RS</option>
+                    <option value="RS">PE</option>
+                    <option value="RS">GO</option>
+                    <option value="RS">MG</option>
+                    <option value="RS">SC</option>
+                    <!--usei alguns para demostração-->
+
+                </select>
+            </div>
+            <button type="button" class="btn btn-success btn-lg"
+                    onclick="cadPessoa(txtNome.value, txtEmail.value,txtCpf.value ,txtTelefone.value, txtCep.value,txtLogradouro.value,txtNumero.value, txtBairro.value, txtCidade.value, slEstado.value,)">
+                Inserir
+            </button>
+        
+            <button type="button" class="btn btn-success btn-lg"
+                    onclick="delRegistro()">
+                Excluir
+            </button>
+        </form>
+    </div>
+
+    <br />
+    <br />
+
+    <div id="dGridPessoas">
+
+        <table id="tbPessoas" class="table table-striped" >
+            <thead class="thead-success ">
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">CPF/CNPJ</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Cep</th>
+                    <th scope="col">Logradouro</th>
+                    <th scope="col">Número</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Estado</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+</body>
+
+</html>
